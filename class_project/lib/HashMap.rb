@@ -14,6 +14,7 @@ class HashMap
   def set(key, val)
     @num_elements -= 1 if bucket(key).include?(key)
     bucket(key).append(key, val)
+    @order <<
     @num_elements += 1
 
     resize(2) if @num_buckets <= @num_elements
